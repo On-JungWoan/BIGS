@@ -1,0 +1,211 @@
+seed: 19991206
+mode: human
+output_path: output
+exp_name: test
+dataset_path: ''
+detect_anomaly: false
+debug: false
+wandb: false
+eval: false
+submit: false
+bg_color: white
+gpus: 0 #
+check_mode: false #
+components: ['right', 'left', 'object'] #
+use_wandb: false
+paper_vis_mode: null
+dataset:
+  log_name: null
+  
+  use_gt: false
+  vis_mesh: false
+  gt_cam_num: 0
+
+  name: arctic
+  smt_mode: "all"
+  drop_not_valid_frame: true
+  dataset_path: "/home/user/datasets/arctic_hold"
+  seq: "s05/espressomachine_grab_01/8" #"s01/box_grab_01/1"
+  tgt_type: "aligned"
+
+  is_valid_thold: 0 #
+  batch_size: 1
+  num_workers: 4
+  debug: true # false
+
+  setup: p1
+  method: arctic_sf
+
+  window_size: 1
+  test_batch_size: 100
+
+  seed: 19991206
+  pin_memory: True
+  shuffle_train: False
+
+  eval: False
+  trainsplit: "train"
+  valsplit: "val"        
+  extraction_mode: ""
+  img_feat_version: ""
+  speedup: True # load cropped images
+  img_res: 224
+  focal_length: 1000.0
+  ego_image_scale: 0.3
+  img_norm_mean: [0.485, 0.456, 0.406]
+  img_norm_std: [0.229, 0.224, 0.225]
+
+  n_views: 4
+  flip_prob: 0.0
+  noise_factor: 0.0
+  rot_factor: 0.0
+  scale_factor: 1.0  
+  extra_smt: false
+train:
+  overwrite_init: false
+  joint_training: false #
+  batch_size: 1
+  num_workers: 0
+  num_steps: 30000 # 14998
+  save_ckpt_interval: 3000 #
+  val_interval: 1000
+  anim_interval: 3000 #15000
+  optim_scene: true
+  save_progress_images: false
+  progress_save_interval: 10
+obj:
+  name: bigs_trimlp
+  left_ckpt: null #
+  right_ckpt: null #
+  object_ckpt: null #
+  joint_ckpt_dir: null #
+
+  optim_rotations: True #
+  optim_opacity: True #
+
+  sh_degree: 0
+  n_subdivision: 3 #
+  only_rgb: false
+  use_surface: false
+  use_deformer: true
+  init_2d: false
+  disable_posedirs: true
+  res_offset: false
+  rotate_sh: false
+  isotropic: true # true
+  init_scale_multiplier: 0.5
+  run_init: false
+  estimate_delta: true
+  triplane_res: 256
+  optim_pose: true
+  optim_betas: false
+  optim_trans: true
+  optim_scale: true
+  optim_eps_offsets: false
+  activation: relu
+  canon_nframes: 60
+  canon_pose_type: hand
+  knn_n_hops: 3
+  lr:
+    wd: 0.0
+    use_optim_ckpt: true
+
+    name: ["xyz"]
+    smpl_spatial: 2.0         # it will be multiplied to tgt lr
+    lr_init: 0.00016          #
+    lr_final: 0.0000016       #
+    lr_delay_mult: 0.01       #
+    lr_max_steps: 30000       #
+
+    position: 1.6e-04          # 1.6e-04
+    smpl_rot: 0.0001           # 0.0001
+    smpl_pose: 0.0001          # 0.0001
+    smpl_betas: 0.0001         # 0.0001
+    smpl_trans: 0.0001         # 0.0001
+    smpl_scale: 0.0001         # 0.0001
+    smpl_eps_offset: 0.0001    # not used
+
+    opacity: 0.05              # wo trimlp
+    scaling: 0.005             # wo trimlp
+    rotation: 0.001            # wo trimlp
+    feature: 0.0025            # wo trimlp
+
+    percent_dense: 0.001
+    appearance: 0.001          # shs, opacity
+    geometry: 0.001            # xyz, rot, scale
+    vembed: 0.001              # triplane
+    deformation: 0.0001        # lbs_w, posedirs
+    
+    lambda_dssim: 0.2
+    lbs_weights: 0.0
+    posedirs: 0.0
+    scale_lr_w_npoints: false
+  loss:
+    ssim_w: 0.2
+    l1_w: 1.3
+    lpips_w: 1.0
+
+    j3d_w: 0.0
+    rot_w: 0.0
+    pose_w: 0.0
+
+    transl_w: 1.0
+    l1_bg_w: 10.0
+    v_template_w: 0.0
+
+    sds_w: 0.0
+
+    # regularization
+    l1_shs: 0.1
+    l2_offset: 0.0
+    l2_scale: 100.0
+    l2_smt: 0.0
+    l2_pre: 0.0
+    
+    lbs_w: 1000.0
+    humansep_w: 0.0
+    num_patches: 4
+    patch_size: 128
+    use_patches: 1
+  dgm:
+    use: false
+    obj_name: null
+    dgm_start_iter: 99999999
+    lambda_rgb_loss: 1000000.0
+    lambda_density_reg: 0.1
+    dgm_loss_weight: 1.0
+    density_start_iter: 3000
+    density_end_iter: 15000
+    densification_interval: 600
+    iter_smpl_densify: 1500
+    iter_prune_smpl_until: 7000
+    controlnet_weight: 0.3
+    cfg_weight: 50.0
+    do_cfg_rescale: true
+    cfg_rescale_weight: 0.0
+    scene_extent: 1.0
+  num_refine: 1
+  sds_interval: 50
+  sds_from_iter: 0
+  sds_until_iter: 5000
+  sds_num_steps: 50
+  sds_use_xl: false
+  size_threshold: null # 20
+  densification_interval: 600     #
+  opacity_reduce_interval: 1.0e+4 #
+  densify_from_iter: 3000          #
+  densify_until_iter: 15000       #
+  densify_grad_threshold: 0.0002
+  densify_grad_abs_threshold: 0.0004
+  prune_min_opacity: 0.005
+  densify_extent: 1.0
+  max_n_gaussians: 2.0e+5
+  min_obj_n_gaussians: -1 # 15000  
+  percent_dense: 0.01
+  use_prune_weight: False # False
+  prune_until_iter: -1 # 1.0e+4
+  min_weight: 1.0e-4
+  use_reduce: False
+  init_prune: False
+  opacity_reset_interval: 1.0e+4 # 3000
+  use_small_scale: False

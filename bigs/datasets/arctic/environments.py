@@ -1,0 +1,1 @@
+DATASET_ROOT = '/home/user/datasets/arctic'
