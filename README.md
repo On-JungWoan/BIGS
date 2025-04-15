@@ -9,7 +9,7 @@
 </h4>
 
 <h5 align="center">
-  [Paper]
+  [<a href="https://arxiv.org/abs/2504.09097">Paper</a>]
   [<a href="https://github.com/On-JungWoan/BIGS">Project Page</a>]
 </h5>
 
@@ -28,9 +28,7 @@
 ## News
 
 - 2025.02.27: 🎉 Paper accepted by CVPR 2025.
-
 - 2024.09.30: 🏆 We gave an oral presentation at the HANDS Workshop, ECCV 2024.
-
 - 2024.09.30: 🥇 We won the 1st place in Bimanual category-agnostic interaction reconstruction challenge in conjunction with ECCV 2024. [[Technical Report](https://hands-workshop.org/files/2024/UVHANDS.pdf)]
 
 <br>
