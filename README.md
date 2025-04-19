@@ -38,3 +38,18 @@
 ```
 TBD
 ```
+
+<br>
+
+## Citation
+
+If you find this work useful, please consider citing our paper.
+
+```bibtex
+@inproceedings{on2025bigs,
+  title={BIGS: Bimanual Category-agnostic Interaction Reconstruction from Monocular Videos via 3D Gaussian Splatting},
+  author={On, Jeongwan and Gwak, Kyeonghwan and Kang, Gunyoung and Cha, Junuk and Hwang, Soohyun and Hwang, Hyein and Baek, Seungryul},
+  booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025},
+}
+```
