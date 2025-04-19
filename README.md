@@ -3,7 +3,7 @@
 </h2>
 
 <h4 align="center">
-  <a href="https://sites.google.com/view/jeongwanon">Jeongwan On</a>, <a href="https://khgwak.github.io/about/">Kyeonghwan Gwak</a>, Gunyoung Kang, <a href="https://junukcha.github.io/about/">Junuk Cha</a>,
+  <a href="https://on-jungwoan.github.io/">Jeongwan On</a>, <a href="https://khgwak.github.io/about/">Kyeonghwan Gwak</a>, Gunyoung Kang, <a href="https://junukcha.github.io/about/">Junuk Cha</a>,
 
   <a href="https://github.com/coding-Hwang">Soohyun Hwang</a>, Hyein Hwang , <a href="https://sites.google.com/site/bsrvision00/">Seungryul Baek</a>
 </h4>
