@@ -9,7 +9,7 @@
 </h4>
 
 <h5 align="center">
-  [<a href="https://arxiv.org/abs/2504.09097">Paper</a>]
+  [<a href="https://openaccess.thecvf.com/content/CVPR2025/papers/On_BIGS_Bimanual_Category-agnostic_Interaction_Reconstruction_from_Monocular_Videos_via_3D_CVPR_2025_paper.pdf">Paper</a>]
   [<a href="https://github.com/On-JungWoan/BIGS">Project Page</a>]
 </h5>
 
@@ -61,7 +61,7 @@ bash -i scripts/release/fit_obj.sh $seq_name
 bash -i scripts/release/fit_obj_wo_sds.sh $seq_name
 ```
 
-### 3. Interacting-subjects obtimization step
+### 3. Interacting-subjects optimization step
 
 ```
 bash -i scripts/release/joint_train.sh $seq_name
