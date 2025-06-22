@@ -35,8 +35,36 @@
 
 ## Getting Started
 
+### 0. Installation
+
 ```
-TBD
+bash scripts/setup.sh
+```
+
+### 1. Single-subject optimization step (hand)
+
+```
+bash -i scripts/release/fit_hand.sh $seq_name
+```
+
+
+### 2. Single-subject optimization step (object)
+
+```
+# SDS loss-based fitting may take a long time to converge.
+# For debugging purposes, you may run the fitting without SDS loss for faster results.
+
+# w/ sds loss
+bash -i scripts/release/fit_obj.sh $seq_name
+
+# w/o sds loss
+bash -i scripts/release/fit_obj_wo_sds.sh $seq_name
+```
+
+### 3. Interacting-subjects obtimization step
+
+```
+bash -i scripts/release/joint_train.sh $seq_name
 ```
 
 <br>
@@ -46,10 +74,12 @@ TBD
 If you find this work useful, please consider citing our paper.
 
 ```bibtex
-@inproceedings{on2025bigs,
-  title={BIGS: Bimanual Category-agnostic Interaction Reconstruction from Monocular Videos via 3D Gaussian Splatting},
-  author={On, Jeongwan and Gwak, Kyeonghwan and Kang, Gunyoung and Cha, Junuk and Hwang, Soohyun and Hwang, Hyein and Baek, Seungryul},
-  booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2025},
+@InProceedings{On_2025_CVPR,
+    author    = {On, Jeongwan and Gwak, Kyeonghwan and Kang, Gunyoung and Cha, Junuk and Hwang, Soohyun and Hwang, Hyein and Baek, Seungryul},
+    title     = {BIGS: Bimanual Category-agnostic Interaction Reconstruction from Monocular Videos via 3D Gaussian Splatting},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {17437-17447}
 }
 ```
