@@ -33,13 +33,34 @@
 
 <br>
 
-## Getting Started
-
-### 0. Installation
+## Installation
 
 ```
 bash scripts/setup.sh
 ```
+
+<br>
+
+## Datasets
+
+Our test sequences can be found below:
+
+- **ARCTIC & HO3Dv3**
+  - We just followed the ECCV 2024 HANDS Workshop Challenge evaluation settings. Our experiments use the officially provided test splits. Additional details are in Section 4.1 (Datasets) of the [BIGS paper](https://openaccess.thecvf.com/content/CVPR2025/papers/On_BIGS_Bimanual_Category-agnostic_Interaction_Reconstruction_from_Monocular_Videos_via_3D_CVPR_2025_paper.pdf). And you can also refer to this link: <https://github.com/zc-alexfan/hold/blob/master/docs/data_doc.md#checkpoints>
+- **HO3Dv3 (Limited view)**
+  - Please refer to this link: <https://drive.google.com/drive/folders/1Tk2Y4lN0vtRaUlHDg7zuWThQZtWWGHVy?usp=sharing>
+
+<br>
+
+## Demo
+
+```
+bash scripts/demo.sh
+```
+
+<br>
+
+## Training
 
 ### 1. Single-subject optimization step (hand)
 
