@@ -88,6 +88,12 @@ bash -i scripts/release/fit_obj_wo_sds.sh $seq_name
 bash -i scripts/release/joint_train.sh $seq_name
 ```
 
+
+<br>
+
+## Acknowledgements
+This project builds on the following projects, many thanks to the authors for open-sourcing their codes:[HOLD](https://github.com/zc-alexfan/hold), [ARCTIC](https://github.com/zc-alexfan/hold), [HUGS](https://github.com/apple/ml-hugs), [GTU](https://github.com/snuvclab/gtu) and all the other listed submodules.
+
 <br>
 
 ## Citation
